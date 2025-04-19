@@ -1,0 +1,226 @@
+<!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galery Prodi</title>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+    <style>
+        body {
+            background-color: #0a0a0a;
+            color: white;
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            position: relative;
+        }#particles-js {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+
+    .gallery-container {
+        position: relative;
+        z-index: 2;
+        padding: 30px 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .gallery-item {
+        background: linear-gradient(145deg, #1a1a1a, #2d2d2d);
+        border-radius: 15px;
+        padding: 15px;
+        box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .gallery-item img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+        transition: transform 0.3s ease;
+    }
+
+    .gallery-item .subtitle {
+        font-size: 1.2em;
+        font-weight: 600;
+        margin: 10px 0;
+        color: #FFDB58;
+    }
+
+    .gallery-item .content {
+        font-size: 0.9em;
+        line-height: 1.5;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+
+    .gallery-item.selected {
+        transform: scale(1.05);
+        z-index: 10;
+        background: linear-gradient(145deg, #2d2d2d, #3a3a3a);
+    }
+
+    .gallery-item.selected .content {
+        max-height: 500px;
+    }
+
+    .gallery-item:not(.selected) {
+        filter: blur(3px);
+        opacity: 0.8;
+    }
+
+    .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: rgba(255, 255, 255, 0.1);
+        border: none;
+        color: white;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        cursor: pointer;
+        backdrop-filter: blur(5px);
+        transition: all 0.3s ease;
+    }
+
+    .close-btn:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: rotate(90deg);
+    }
+
+    .back-home {
+        display: block;
+        margin: 30px auto;
+        padding: 12px 30px;
+        background: rgba(255, 219, 88, 0.9);
+        color: #1a1a1a;
+        border: none;
+        border-radius: 25px;
+        font-size: 1.1em;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(255, 219, 88, 0.3);
+    }
+
+    .back-home:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(255, 219, 88, 0.5);
+    }
+
+    @media (max-width: 768px) {
+        .gallery {
+            grid-template-columns: 1fr;
+        }
+
+        .gallery-item img {
+            height: 150px;
+        }
+    }
+</style>
+
+</head>
+<body>
+    <div id="particles-js"></div>
+    <div class="gallery-container">
+        <div class="gallery">
+            <!-- Existing Items -->
+            <div class="gallery-item">
+                <button class="close-btn">×</button>
+                <img src="tkj.jpg" alt="Teknik Komputer Jaringan">
+                <div class="subtitle">Teknik Komputer & Jaringan</div>
+                <div class="content">Program studi yang mempelajari tentang infrastruktur jaringan komputer dan sistem keamanan jaringan.</div>
+            </div>
+            <div class="gallery-item">
+                <button class="close-btn">×</button>
+                <img src="dkv.jpg" alt="Desain Komunikasi Visual">
+                <div class="subtitle">Desain Komunikasi Visual</div>
+                <div class="content">Program studi yang fokus pada pembuatan konten visual kreatif untuk media cetak dan digital.</div>
+            </div>
+            <div class="gallery-item">
+                <button class="close-btn">×</button>
+                <img src="akuntansi.jpg" alt="Akuntansi">
+                <div class="subtitle">Akuntansi</div>
+                <div class="content">Program studi yang mengajarkan pengelolaan keuangan dan pembukuan bisnis profesional.</div>
+            </div>
+            <div class="gallery-item">
+                <button class="close-btn">×</button>
+                <img src="tbo.jpg" alt="Tata Boga">
+                <div class="subtitle">Tata Boga</div>
+                <div class="content">Program studi yang mempelajari seni pengolahan makanan dan manajemen kuliner.</div>
+            </div>
+            <div class="gallery-item">
+                <button class="close-btn">×</button>
+                <img src="pemasaran.jpg" alt="Pemasaran">
+                <div class="subtitle">Pemasaran</div>
+                <div class="content">Program studi yang mempelajari strategi, riset pasar, komunikasi, dan pemanfaatan media digital untuk mempromosikan produk atau jasa secara efektif.</div>
+            </div>
+            <div class="gallery-item">
+                <button class="close-btn">×</button>
+                <img src="tatabusana.jpg" alt="Tata Busana">
+                <div class="subtitle">Tata Busana</div>
+                <div class="content">Program studi yang mempelajari desain, teknik pembuatan, dan pengembangan produk busana, mulai dari konsep, pola, hingga produksi, sesuai tren dan kebutuhan pasar.</div>
+            </div>
+            <div class="gallery-item">
+                <button class="close-btn">×</button>
+                <img src="tkkr.jpg" alt="Tata Kecantikan Kulit Dan Rambut">
+                <div class="subtitle">Tata Kecantikan Kulit Dan Rambut</div>
+                <div class="content">Program studi yang mempelajari teknik perawatan kulit dan rambut, tata rias, serta penggunaan produk kecantikan untuk menunjang penampilan profesional sesuai standar industri.</div>
+            </div>
+            <div class="gallery-item">
+                <button class="close-btn">×</button>
+                <img src="otkp.jpg" alt="Management Perkantoran">
+                <div class="subtitle">Management Perkantoran</div>
+                <div class="content">Program studi yang mempelajari pengelolaan administrasi, pengarsipan, layanan komunikasi, dan operasional kantor untuk mendukung kelancaran kegiatan bisnis dan organisasi.</div>
+            </div>
+        </div>
+        <button class="back-home" onclick="goHome()">Beranda</button>
+    </div>
+    <script>
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 80, density: { enable: true, value_area: 800 } },
+                color: { value: "#ffffff" },
+                shape: { type: "circle" },
+                opacity: { value: 0.5, random: true },
+                size: { value: 3, random: true },
+                move: { enable: true, speed: 1.2, direction: "none", out_mode: "out", bounce: false }
+            },
+            interactivity: { events: { onhover: { enable: true, mode: "repulse" }, onclick: { enable: true, mode: "push" } } }
+        });const galleryItems = document.querySelectorAll('.gallery-item');
+    const closeBtns = document.querySelectorAll('.close-btn');
+    galleryItems.forEach(item => item.addEventListener('click', e => {
+        if (!e.target.classList.contains('close-btn')) {
+            galleryItems.forEach(el => el.classList.remove('selected'));
+            item.classList.add('selected');
+        }
+    }));
+    closeBtns.forEach(btn => btn.addEventListener('click', e => {
+        e.stopPropagation();
+        btn.parentElement.classList.remove('selected');
+    }));
+    document.addEventListener('click', e => {
+        if (!e.target.closest('.gallery-item')) {
+            galleryItems.forEach(el => el.classList.remove('selected'));
+        }
+    });
+    function goHome() { window.location.href = "index.html"; }
+</script>
+
+</body>
+</html>
